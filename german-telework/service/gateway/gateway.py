@@ -150,6 +150,7 @@ def send_to_router(user, obj):
     totalsent = 0
     while totalsent < len(to_send):
         encoded_data = to_send[totalsent:].encode("utf-8")
+        print(f"Sending: {encoded_data}")
         encoded_data = tc_state_send.transport_crypt(bytearray(encoded_data))
         sent = router.send(encoded_data)
         if sent == 0:
