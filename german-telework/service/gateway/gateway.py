@@ -201,6 +201,7 @@ def handle_task_reply(s, reply):
 
 def handle_leave_reply(s, reply):
     parts = reply.split(b"|||")
+    print(f'{parts = }')
     user = parts[1]
     user = actions.user.User.deserialize(user.strip(b"\n").decode("utf-8"))
     leave = ""
